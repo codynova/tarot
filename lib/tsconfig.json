@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "lib": [ "esnext" ],
+        "jsx": "react",
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "alwaysStrict": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "strictNullChecks": true,
+        "removeComments": true,
+        "sourceMap": true,
+        "skipLibCheck": true
+    },
+    "include": [
+        "../../../src/**/*.ts",
+        "../../../src/**/*.tsx"
+    ]
+}

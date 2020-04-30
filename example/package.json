@@ -1,0 +1,20 @@
+{
+	"name": "example-project",
+	"version": "0.0.1",
+	"description": "Example project description",
+	"main": "src/index.js",
+	"scripts": {
+		"start": "npm run dev",
+		"dev": "npm run serve",
+		"clean": "rimraf ./dist/",
+		"build": "npm run clean && webpack",
+		"build:prod": "npm run clean && webpack --prod",
+		"serve": "webpack-dev-server --open"
+	},
+	"keywords": [],
+	"author": "Cody Nova",
+	"license": "ISC",
+	"devDependencies": {
+		"tarot": "0.0.1"
+	}
+}
