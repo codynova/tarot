@@ -1,6 +1,6 @@
 {
 	"name": "tarot",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Reveal the secret of build process abstraction",
 	"main": "lib/index.js",
 	"scripts": {},

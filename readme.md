@@ -4,8 +4,52 @@
 
 Webpack configuration for TS, JS, SCSS, and React with ESNext and optional CSS modules + IE11 support
 
+### Objectives
 
-## Options
+&nbsp;&nbsp;&nbsp;&nbsp;🌈 Excellent dev experience<br>
+&nbsp;&nbsp;&nbsp;&nbsp;🚀 Powerful tooling<br>
+&nbsp;&nbsp;&nbsp;&nbsp;🏛 Standardized architecture<br>
+<br>
+
+#### Simplicity
+
+Provides cutting edge build, bundle, and polyfill capabilities with dead simple config:
+
+```js
+const { build } = require('tarot')
+
+module.exports = (env, argv) => build({
+  argv,
+  entries: {
+    bundle: { file: 'index.js' },
+  },
+})
+```
+
+#### Flexibility
+
+Generate multiple output files with ease. Change input and output directories, turn on CSS Modules or polyfilling, provide your own transpile or lint settings, tweak dev server config, and add Webpack plugins with minimal configuration.
+
+```js
+const { build, pluginCopyFiles } = require('tarot')
+
+module.exports = (env, argv) => build({
+  argv,
+  source: 'src',
+  output: 'dist',
+  entries: {
+    bundle: { file: 'index.js' },
+    'vendor/styles': { file: 'vendor.scss' },
+  },
+  plugins: [
+    pluginCopyFiles({ from: 'assets', to: 'assets' })
+  ]
+})
+```
+<br>
+
+
+### Options
 
 ```typescript
 type SharedOptions = {
