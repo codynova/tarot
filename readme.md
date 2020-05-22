@@ -78,8 +78,8 @@ type CommonOptions = {
     output?: string
     plugins?: function[]
     useCssModules?: boolean
-    cssGlobalDirectories?: string[]
-    cssModuleDirectories?: string[]
+    cssGlobalIncludes?: string[]
+    cssModuleIncludes?: string[]
     usePolyfills?: boolean
     useLinting?: boolean
     eslintConfigPath?: string
@@ -100,7 +100,7 @@ type TopLevelOptions = CommonOptions & {
     aliases?: { [key: string]: string }
     useHttps?: boolean
     allowCors?: boolean
-    nodeModulesToBabel?: string[]
+    nodeModuleBabelIncludes?: string[]
 }
 ```
 <br>
