@@ -1,6 +1,6 @@
 {
 	"name": "tarot",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "Bleeding edge web build processes",
 	"main": "lib/index.js",
 	"scripts": {},
@@ -39,6 +39,7 @@
 		"postcss-sorting": "5.0.1",
 		"raw-loader": "4.0.1",
 		"rimraf": "3.0.2",
+		"react-hot-loader": "4.12.21",
 		"sass": "1.26.5",
 		"sass-loader": "8.0.2",
 		"style-loader": "1.2.1",
