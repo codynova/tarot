@@ -4,6 +4,7 @@
 	"rules": {
 		"indentation": ["tab"],
 		"no-extra-semicolons": [true],
+		"no-descending-specificity": null,
 		"at-rule-no-unknown": null,
 		"scss/at-rule-no-unknown": [true],
 		"selector-pseudo-class-no-unknown": [
