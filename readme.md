@@ -101,6 +101,8 @@ type CommonOptions = {
     usePolyfills?: boolean
     useLinting?: boolean
     eslintConfigPath?: string
+    eslintIgnorePath?: string
+    eslintExcludes?: string[]
     stylelintConfigPath?: string
     prettierConfigPath?: string
     tsConfigPath?: string
