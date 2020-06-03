@@ -1,6 +1,6 @@
 {
     "extends": [
         "@intouchgroup/eslint-config",
-        "plugin:prettier/recommended"
+        "prettier"
     ]
 }

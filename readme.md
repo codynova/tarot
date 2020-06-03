@@ -1,8 +1,8 @@
 # Tarot
 
-🔮 Bleeding edge web build processes, without the headache
+🔮 Bleeding edge web architecture
 
-Webpack configuration for TS, JS, SCSS, and React with ESNext and optional CSS modules + IE11 support
+Webpack configuration for TS, JS, SCSS, and React with ESNext and optional CSS modules, JS polyfills, and IE11 support
 
 ### Objectives
 
@@ -19,7 +19,7 @@ Optional and configurable support for:
 * TypeScript and ESNext
 * React
 * SCSS and CSS Modules
-* IE11 with polyfills
+* JS polyfills and IE11 support
 * Linting
 * Prettier
 * Dev server
@@ -71,7 +71,7 @@ module.exports = (env, argv) => build({
 
 #### Package.json
 
-This is a basic `package.json` for a project using Tarot. The Tarot module is the only required `devDependency`. You can configure Prettier using the field in `package.json`:
+This is a basic `package.json` for a project using Tarot. The Tarot module is the only required `devDependency`:
 
 ```jsonc
   "scripts": {
@@ -80,11 +80,9 @@ This is a basic `package.json` for a project using Tarot. The Tarot module is th
     "build": "npm run clean && webpack",
     "build-prod": "npm run build -- --prod"
   },
-  "prettier": "tarot-prettier",
-  "devDependencies": {
-    "tarot": "0.0.10"
+  "devDependency": {
+    "tarot": "latest"
   }
-
 ```
 
 
@@ -104,6 +102,7 @@ type CommonOptions = {
     useLinting?: boolean
     eslintConfigPath?: string
     stylelintConfigPath?: string
+    prettierConfigPath?: string
     tsConfigPath?: string
     babelConfigPath?: string
 }
