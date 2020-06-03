@@ -21,6 +21,7 @@ Optional and configurable support for:
 * SCSS and CSS Modules
 * IE11 with polyfills
 * Linting
+* Prettier
 * Dev server
 * Production builds
 <br>
@@ -68,9 +69,28 @@ module.exports = (env, argv) => build({
 <br>
 
 
+#### Package.json
+
+This is a basic `package.json` for a project using Tarot. The Tarot module is the only required `devDependency`. You can configure Prettier using the field in `package.json`:
+
+```jsonc
+  "scripts": {
+    "dev": "webpack-dev-server --open",
+    "clean": "rimraf ./dist/",
+    "build": "npm run clean && webpack",
+    "build-prod": "npm run build -- --prod"
+  },
+  "prettier": "tarot-prettier",
+  "devDependencies": {
+    "tarot": "0.0.10"
+  }
+
+```
+
+
 ### API
 
-This is the type signature of the API, where `TopLevelOptions` is the type of the config object that is passed into Tarot's `build` function:
+This is the type signature of the API, where Tarot's build function will return a complete Webpack configuration:
 
 ```typescript
 type CommonOptions = {
@@ -102,6 +122,8 @@ type TopLevelOptions = CommonOptions & {
     allowCors?: boolean
     nodeModuleBabelIncludes?: string[]
 }
+
+export const build = (options: TopLevelOptions) => WebpackConfig
 ```
 <br>
 

@@ -7529,6 +7529,11 @@ tar@^6.0.2:
     mkdirp "^1.0.3"
     yallist "^4.0.0"
 
+tarot-prettier@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/tarot-prettier/-/tarot-prettier-0.0.1.tgz#14318defe88ccf405c69a6927de07dd4e6c6a059"
+  integrity sha512-jUf+Qckcr1kOjvXhA7195zQWIvqpPqrkjvhMs3k6qqN74y1cKV1LRNN4sklWWWDF+lmA+xKwTqUkJ0JDyd54Sg==
+
 terser-webpack-plugin@^1.4.3:
   version "1.4.3"
   resolved "https://registry.yarnpkg.com/terser-webpack-plugin/-/terser-webpack-plugin-1.4.3.tgz#5ecaf2dbdc5fb99745fd06791f46fc9ddb1c9a7c"
