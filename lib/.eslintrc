@@ -1,6 +1,5 @@
 {
     "extends": [
-        "@intouchgroup/eslint-config",
-        "prettier"
+        "@intouchgroup/eslint-config"
     ]
 }
