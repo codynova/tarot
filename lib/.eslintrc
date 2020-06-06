@@ -1,5 +1,7 @@
 {
     "extends": [
-        "tarot-eslint-config"
+        // In Eslint 7+, plugins are resolved
+        // relative to the config file
+        "../../tarot-eslint-config"
     ]
 }
