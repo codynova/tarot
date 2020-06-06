@@ -1,5 +1,5 @@
 {
     "extends": [
-        "@intouchgroup/eslint-config"
+        "tarot-eslint-config"
     ]
 }
