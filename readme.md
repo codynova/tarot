@@ -71,7 +71,7 @@ module.exports = (env, argv) => build({
 
 #### Package.json
 
-This is a basic `package.json` for a project using Tarot. The Tarot module is the only required `devDependency`:
+This is a basic `package.json` for a project using Tarot. The Tarot module is the only module required in `devDependencies`:
 
 ```jsonc
   "scripts": {
@@ -80,7 +80,7 @@ This is a basic `package.json` for a project using Tarot. The Tarot module is th
     "build": "npm run clean && webpack",
     "build-prod": "npm run build -- --prod"
   },
-  "devDependency": {
+  "devDependencies": {
     "tarot": "latest"
   }
 ```
