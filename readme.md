@@ -94,7 +94,7 @@ This is the type signature of the API, where Tarot's build function will return 
 type CommonOptions = {
     source?: string
     output?: string
-    plugins?: function[]
+    plugins?: Function[]
     useCssModules?: boolean
     cssGlobalIncludes?: string[]
     cssModuleIncludes?: string[]
@@ -115,7 +115,10 @@ type EntryOptions = CommonOptions & {
     cssOutputFile?: string
 }
 
-type TopLevelOptions = CommonOptions & {
+// Values from CommonOptions that are specified
+// here will be used as the default value for all
+// entries. Individual entries can override options.
+type BuildOptions = CommonOptions & {
     argv?: { prod?: boolean, analyze?: boolean }
     entries: { [key: string]: EntryOptions }
     aliases?: { [key: string]: string }
@@ -124,7 +127,7 @@ type TopLevelOptions = CommonOptions & {
     nodeModuleBabelIncludes?: string[]
 }
 
-export const build = (options: TopLevelOptions) => WebpackConfig
+export const build = (options: BuildOptions) => WebpackConfig
 ```
 <br>
 
