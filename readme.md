@@ -35,8 +35,7 @@ Tarot exports a `build` function, which takes care of configuring Webpack for yo
 // webpack.config.js
 const { build } = require('tarot')
 
-module.exports = (env, argv) => build({
-  argv,
+module.exports = build({
   entries: {
     bundle: { file: 'index.js' },
   },
@@ -53,8 +52,7 @@ Generate multiple output files, change input and output directories, turn on CSS
 // webpack.config.js
 const { build, pluginCopyFiles } = require('tarot')
 
-module.exports = (env, argv) => build({
-  argv,
+module.exports = build({
   source: 'src',
   output: 'dist',
   entries: {
@@ -119,7 +117,7 @@ type EntryOptions = CommonOptions & {
 // here will be used as the default value for all
 // entries. Individual entries can override options.
 type BuildOptions = CommonOptions & {
-    argv?: { prod?: boolean, analyze?: boolean }
+    argv?: { prod?: boolean, analyze?: boolean } // Pass arguments from the CLI
     entries: { [key: string]: EntryOptions }
     aliases?: { [key: string]: string }
     useHttps?: boolean
@@ -135,5 +133,3 @@ export const build = (options: BuildOptions) => WebpackConfig
 ### Options
 
 Tarot has sensible defaults to encourage standardized architecture. However it is possible to tweak every aspect of the build process.
-
-You are only required to provide an `entries` object. However it is strongly encouraged to also pass the `argv` object so Tarot can differentiate between build environments.
