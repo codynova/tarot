@@ -1,7 +1,6 @@
 const { build } = require('tarot')
 
-module.exports = (env, argv) => build({
-    argv,
+module.exports = build({
     entries: {
         bundle: {
             file: 'index.js',

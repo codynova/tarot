@@ -15,6 +15,6 @@
 	"author": "Cody Nova",
 	"license": "ISC",
 	"devDependencies": {
-		"tarot": "0.0.9"
+		"tarot": "file:../"
 	}
 }

@@ -1,2 +1,2 @@
-const mine: string[] = [ 'test' ];
-console.log(mine);
+const data: string[] = [ 'test' ]
+console.log(data)
