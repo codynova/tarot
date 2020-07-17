@@ -1,6 +1,6 @@
 {
 	"name": "tarot",
-	"version": "0.0.31",
+	"version": "0.0.32",
 	"description": "Bleeding edge web architecture",
 	"main": "lib/index.js",
 	"scripts": {},
@@ -30,6 +30,7 @@
 		"extract-css-chunks-webpack-plugin": "4.7.5",
 		"fibers": "5.0.0",
 		"file-loader": "6.0.0",
+		"fork-ts-checker-webpack-plugin": "5.0.7",
 		"ignore-emit-webpack-plugin": "2.0.2",
 		"optimize-css-assets-webpack-plugin": "5.0.3",
 		"path": "0.12.7",
