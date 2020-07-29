@@ -21,9 +21,10 @@ Optional and configurable support for:
 * SCSS and CSS Modules
 * JS polyfills and IE11 support
 * Linting
-* Prettier
+* Prettification
 * Dev server
 * Production builds
+* Git hooks via husky
 <br>
 
 
