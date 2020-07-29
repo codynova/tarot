@@ -3,6 +3,9 @@
 	"version": "0.0.35",
 	"description": "Bleeding edge web architecture",
 	"main": "lib/index.js",
+	"bin": {
+		"tarot": "lib/cli.js"
+	},
 	"scripts": {},
 	"repository": {
 		"type": "git",

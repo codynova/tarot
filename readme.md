@@ -68,16 +68,27 @@ module.exports = build({
 <br>
 
 
+#### CLI
+
+You can run tarot via the CLI with the following commands:
+
+* `tarot dev` - launch the local development server and watch for changes
+* `tarot build` - build every application entry in the webpack config with dev env settings
+* `tarot prod` - build every application entry in the webpack config with production env settings
+
+Note that Tarot does not clean up your output directory on each consecutive build.
+
+
 #### Package.json
 
-This is a basic `package.json` for a project using Tarot. The Tarot module is the only module required in `devDependencies`:
+This is a basic `package.json` for a project using Tarot. The `dev`, `build`, and `prod` scripts in the example below are equivalent to running the same script via the Tarot CLI. The Tarot node module is the only module required in `devDependencies`:
 
 ```jsonc
   "scripts": {
     "dev": "webpack-dev-server --open",
     "clean": "rimraf ./dist/",
     "build": "npm run clean && webpack",
-    "build-prod": "npm run build -- --prod"
+    "prod": "npm run build -- --prod"
   },
   "devDependencies": {
     "tarot": "latest"
@@ -133,4 +144,4 @@ export const build = (options: BuildOptions) => WebpackConfig
 
 ### Options
 
-Tarot has sensible defaults to encourage standardized architecture. However it is possible to tweak every aspect of the build process.
+Tarot has sensible defaults to encourage standardized architecture. However it is possible to tweak every aspect of the build process. All options are listed under the API section of the readme.
