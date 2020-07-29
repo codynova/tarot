@@ -127,12 +127,17 @@ module.exports = build({
   },
 })
 ```
+<br>
 
-* `entries` - Required. An object which contains all entry files. Entries are identified by keys. When Tarot builds the entries, the output files will be named according to that entry's key by default. Entries can be individually configured, including the output file names.
-* `aliases` - A [Webpack alias object](https://webpack.js.org/configuration/resolve/#resolvealias).
-* `useHttps` - Whether to use HTTPS with `webpack-dev-server`, defaults to false.
-* `allowCors` - Whether to allows CORS with `webpack-dev-server`, defaults to false.
-* `nodeModuleBabelIncludes` - Package names from `node_modules` to include in `babel-loader`'s module resolution, defaults to empty.
+* **`entries`** - Required. An object which contains all entry files. Entries are identified by keys. When Tarot builds the entries, the output files will be named according to that entry's key by default. Entries can be individually configured, including the output file names.
+
+* **`aliases`** - A [Webpack alias object](https://webpack.js.org/configuration/resolve/#resolvealias).
+
+* **`useHttps`** - Whether to use HTTPS with `webpack-dev-server`, defaults to false.
+
+* **`allowCors`** - Whether to allows CORS with `webpack-dev-server`, defaults to false.
+
+* **`nodeModuleBabelIncludes`** - Package names from `node_modules` to include in `babel-loader`'s module resolution, defaults to empty.
 <br>
 
 
@@ -153,10 +158,13 @@ module.exports = build({
   },
 })
 ```
+<br>
 
-* `file` - Required. The path to an entry file, relative to `source`.
-* `jsOutputFile` - Provide a name for the output JavaScript bundle file, defaults to the key for this entry.
-* `cssOutputFile` - Provide a name for the output CSS bundle file, defaults to the key for this entry.
+* **`file`** - Required. The path to an entry file, relative to `source`.
+
+* **`jsOutputFile`** - Provide a name for the output JavaScript bundle file, defaults to the key for this entry.
+
+* **`cssOutputFile`** - Provide a name for the output CSS bundle file, defaults to the key for this entry.
 <br>
 
 
@@ -180,24 +188,41 @@ module.exports = build({
   },
 })
 ```
+<br>
 
-* `source` - The source directory in which to resolve files.
-* `output` - The output directory where built files will reside.
-* `plugins` - An array of functions which each return a [Webpack plugin](https://webpack.js.org/concepts/plugins/).
-* `useScriptLoaders` - Whether to use `babel-loader` and `ts-loader`, defaults to true unless the entry file is not ECMAScript (i.e. a SCSS entry file).
-* `useCssModules` - Whether to build CSS Modules, defaults to false.
-* `cssGlobalIncludes` - An array of directories, relative to `source`, to be compiled as standard stylesheets, defaults to empty `'styles/'`.
-* `cssModuleIncludes` - An array of directories, relative to `source`, to be compiled as CSS Modules, defaults to `'components/'`.
-* `usePolyfills` - Whether to use `core-js` polyfills, defaults to false.
-* `useLinting` - Whether to use any kind of linting, defaults to true.
-* `useStyleLinting` - Whether to lint styles, defaults to true.
-* `useScriptLinting` - Whether to lint scripts, defaults to true.
-* `eslintConfigPath` - Provide a path to a custom eslint config relative to the cwd, defaults to Tarot's internal eslint config.
-* `eslintIgnorePath` - Provide a path to a custom eslint ignore config relative to the cwd, defaults to Tarot's internal eslint ignore config.
-* `eslintExcludes` - An array of directories to be passed to [eslint's `ignorePatterns` option](https://eslint.org/docs/user-guide/configuring#ignorepatterns-in-config-files) (paths are resolved according to eslint's `ignorePatterns` rules).
-* `stylelintConfigPath` - Provide a path to a custom stylelint config relative to the cwd, defaults to Tarot's internal stylelint config.
-* `tsConfigPath` - Provide a path to a custom tsconfig relative to the cwd, defaults to Tarot's internal tsconfig.
-* `babelConfigPath` - Provide a path to a custom babel config relative to the cwd, defaults to Tarot's internal babel config.
+* **`source`** - The source directory in which to resolve files.
+
+* **`output`** - The output directory where built files will reside.
+
+* **`plugins`** - An array of functions which each return a [Webpack plugin](https://webpack.js.org/concepts/plugins/).
+
+* **`useScriptLoaders`** - Whether to use `babel-loader` and `ts-loader`, defaults to true unless the entry file is not ECMAScript (i.e. a SCSS entry file).
+
+* **`useCssModules`** - Whether to build CSS Modules, defaults to false.
+
+* **`cssGlobalIncludes`** - An array of directories, relative to `source`, to be compiled as standard stylesheets, defaults to empty `'styles/'`.
+
+* **`cssModuleIncludes`** - An array of directories, relative to `source`, to be compiled as CSS Modules, defaults to `'components/'`.
+
+* **`usePolyfills`** - Whether to use `core-js` polyfills, defaults to false.
+
+* **`useLinting`** - Whether to use any kind of linting, defaults to true.
+
+* **`useStyleLinting`** - Whether to lint styles, defaults to true.
+
+* **`useScriptLinting`** - Whether to lint scripts, defaults to true.
+
+* **`eslintConfigPath`** - Provide a path to a custom eslint config relative to the cwd, defaults to Tarot's internal eslint config.
+
+* **`eslintIgnorePath`** - Provide a path to a custom eslint ignore config relative to the cwd, defaults to Tarot's internal eslint ignore config.
+
+* **`eslintExcludes`** - An array of directories to be passed to [eslint's `ignorePatterns` option](https://eslint.org/docs/user-guide/configuring#ignorepatterns-in-config-files) (paths are resolved according to eslint's `ignorePatterns` rules).
+
+* **`stylelintConfigPath`** - Provide a path to a custom stylelint config relative to the cwd, defaults to Tarot's internal stylelint config.
+
+* **`tsConfigPath`** - Provide a path to a custom tsconfig relative to the cwd, defaults to Tarot's internal tsconfig.
+
+* **`babelConfigPath`** - Provide a path to a custom babel config relative to the cwd, defaults to Tarot's internal babel config.
 <br>
 
 
