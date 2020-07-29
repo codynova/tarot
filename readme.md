@@ -3,6 +3,8 @@
 🔮 Bleeding edge web architecture
 
 Webpack configuration for TS, JS, SCSS, and React with ESNext and optional CSS modules, JS polyfills, and IE11 support
+<br><br>
+
 
 ### Objectives
 
@@ -25,6 +27,7 @@ Optional and configurable support for:
 * Dev server
 * Production builds
 * Git hooks via husky
+* Style entry files
 <br>
 
 
@@ -77,8 +80,7 @@ You can run tarot via the CLI with the following commands:
 * `tarot prod` - build every application entry in the webpack config with production env settings
 
 Note that Tarot does not clean up your output directory on each consecutive build.
-<br>
-
+<br><br>
 
 #### Package.json
 
@@ -101,8 +103,7 @@ This is a basic `package.json` for a project using Tarot. The `dev`, `build`, an
 ### Options
 
 Tarot has sensible defaults to encourage standardized architecture. However it is possible to tweak every aspect of the build process. All options are listed under the API section of the readme.
-<br>
-
+<br><br>
 
 
 #### Build Options
