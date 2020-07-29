@@ -110,6 +110,8 @@ type CommonOptions = {
     cssModuleIncludes?: string[]
     usePolyfills?: boolean
     useLinting?: boolean
+    useStyleLinting?: boolean
+    useScriptLinting?: boolean
     eslintConfigPath?: string
     eslintIgnorePath?: string
     eslintExcludes?: string[]
