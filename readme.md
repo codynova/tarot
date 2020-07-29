@@ -68,7 +68,7 @@ module.exports = build({
 <br>
 
 
-#### CLI
+### CLI
 
 You can run tarot via the CLI with the following commands:
 
@@ -77,7 +77,7 @@ You can run tarot via the CLI with the following commands:
 * `tarot prod` - build every application entry in the webpack config with production env settings
 
 Note that Tarot does not clean up your output directory on each consecutive build.
-
+<br>
 
 #### Package.json
 
@@ -94,11 +94,13 @@ This is a basic `package.json` for a project using Tarot. The `dev`, `build`, an
     "tarot": "latest"
   }
 ```
+<br>
 
 
 ### Options
 
 Tarot has sensible defaults to encourage standardized architecture. However it is possible to tweak every aspect of the build process. All options are listed under the API section of the readme.
+<br>
 
 
 #### Build Options
@@ -125,6 +127,7 @@ module.exports = build({
 * `useHttps` - Whether to use HTTPS with `webpack-dev-server`, defaults to false.
 * `allowCors` - Whether to allows CORS with `webpack-dev-server`, defaults to false.
 * `nodeModuleBabelIncludes` - Package names from `node_modules` to include in `babel-loader`'s module resolution, defaults to empty.
+<br>
 
 
 #### Entry Options
@@ -148,6 +151,7 @@ module.exports = build({
 * `file` - Required. The path to an entry file, relative to `source`.
 * `jsOutputFile` - Provide a name for the output JavaScript bundle file, defaults to the key for this entry.
 * `cssOutputFile` - Provide a name for the output CSS bundle file, defaults to the key for this entry.
+<br>
 
 
 #### Common Options
@@ -188,6 +192,7 @@ module.exports = build({
 * `stylelintConfigPath` - Provide a path to a custom stylelint config relative to the cwd, defaults to Tarot's internal stylelint config.
 * `tsConfigPath` - Provide a path to a custom tsconfig relative to the cwd, defaults to Tarot's internal tsconfig.
 * `babelConfigPath` - Provide a path to a custom babel config relative to the cwd, defaults to Tarot's internal babel config.
+<br>
 
 
 ### API
