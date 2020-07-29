@@ -75,9 +75,12 @@ module.exports = build({
 
 You can run tarot via the CLI with the following commands:
 
-* `tarot dev` - launch the local development server and watch for changes
-* `tarot build` - build every application entry in the webpack config with dev env settings
-* `tarot prod` - build every application entry in the webpack config with production env settings
+* **`tarot dev`** - launch the local development server and watch for changes
+
+* **`tarot build`** - build every application entry in the webpack config with dev env settings
+
+* **`tarot prod`** - build every application entry in the webpack config with production env settings
+
 
 Note that Tarot does not clean up your output directory on each consecutive build.
 <br><br>
