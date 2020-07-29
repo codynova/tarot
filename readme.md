@@ -79,6 +79,7 @@ You can run tarot via the CLI with the following commands:
 Note that Tarot does not clean up your output directory on each consecutive build.
 <br>
 
+
 #### Package.json
 
 This is a basic `package.json` for a project using Tarot. The `dev`, `build`, and `prod` scripts in the example below are equivalent to running the same script via the Tarot CLI. The Tarot node module is the only module required in `devDependencies`:
@@ -101,6 +102,7 @@ This is a basic `package.json` for a project using Tarot. The `dev`, `build`, an
 
 Tarot has sensible defaults to encourage standardized architecture. However it is possible to tweak every aspect of the build process. All options are listed under the API section of the readme.
 <br>
+
 
 
 #### Build Options
