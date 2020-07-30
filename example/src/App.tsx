@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 import { Box } from 'Components'
 
 const App = () => (
-    <Box />
+	<Box />
 )
 
 render(<App />, document.getElementById('app'))

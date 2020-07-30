@@ -12,8 +12,8 @@ module.exports = build({
             file: 'styles/styles.scss',
             useCssModules: true,
         },
-        alias: {
-            Components: 'components',
-        },
+    },
+    alias: {
+        Components: 'components',
     },
 })
