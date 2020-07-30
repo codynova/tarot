@@ -255,9 +255,9 @@ Tarot exports a couple plugins for your convenience. Tarot also uses several oth
 
 ```js
 pluginCopyFiles(
-  // Copy files from `images/` in `source`, to `assets/images/` in `output`
+  // Copy files from images/ in source, to assets/images/ in output
   { from: 'images', to: 'assets/images' },
-  // Copy a file from `source` to `output`, and rename it
+  // Copy a file from source to output, and rename it
   { from: 'test.html', to: `test_${Date.now}.html` },
 )
 ```
