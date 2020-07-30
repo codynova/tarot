@@ -249,7 +249,7 @@ module.exports = build({
 ### Plugins
 
 Tarot exports a couple plugins for your convenience. Tarot also uses several other plugins internally that aren't exported, for tasks like linting and typechecking. Plugins are passed directly to Webpack, so you are not limited to using Tarot's plugins - any valid Webpack plugin should work.
-<br>
+<br><br>
 
 * **`pluginCopyFiles`** - Copy files or directories from one location to another. Accepts an unlimited number of arguments, where each argument is an object in the shape `{ from: 'vendor', to: 'vendor' }`. The `from` path is relative to `source`, while the `to` path is relative to `output`.
 
@@ -261,13 +261,14 @@ pluginCopyFiles(
   { from: 'test.html', to: `test_${Date.now}.html` },
 )
 ```
+<br>
 
 * **`pluginIgnoreOutput`** - Prevent Webpack from emitting files with names that match a pattern. Accepts a string, RegExp, or an array of strings and/or RegExp to match filenames against.
 
 ```js
 pluginIgnoreOutput([
   'styles.css',
-  /^bundle\.js/
+  /^bundle\.js/,
 ])
 ```
 <br>
