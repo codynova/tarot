@@ -1,20 +1,15 @@
 {
-	"name": "example-project",
+	"name": "tarot-example",
 	"version": "0.0.1",
-	"description": "Example project description",
-	"main": "src/index.js",
+	"description": "Tarot example project",
+	"main": "dist/bundle.js",
 	"scripts": {
-		"start": "npm run dev",
-		"dev": "npm run serve",
-		"clean": "rimraf ./dist/",
-		"build": "npm run clean && webpack",
-		"build:prod": "npm run clean && webpack --prod",
-		"serve": "webpack-dev-server --open"
+		"start": "tarot dev",
+		"build": "tarot build",
+		"prod": "tarot prod"
 	},
-	"keywords": [],
-	"author": "Cody Nova",
 	"license": "ISC",
 	"devDependencies": {
-		"tarot": "file:../"
+		"tarot": "latest"
 	}
 }

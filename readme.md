@@ -81,7 +81,7 @@ module.exports = build({
   ],
   useHttps: true,
   allowCors: true,
-  aliases: {
+  alias: {
     react-dom: '@hot-loader/react-dom',
     Components: 'src/components',
   },
@@ -151,7 +151,7 @@ module.exports = build({
 
 * **`entries`** - Required. An object which contains all entry files. Entries are identified by keys. When Tarot builds the entries, the output files will be named according to that entry's key by default. Entries can be individually configured, including the output file names.
 
-* **`aliases`** - A [Webpack alias object](https://webpack.js.org/configuration/resolve/#resolvealias).
+* **`alias`** - A [Webpack alias object](https://webpack.js.org/configuration/resolve/#resolvealias), paths are relative to `source`.
 
 * **`useHttps`** - Whether to use HTTPS with `webpack-dev-server`, defaults to false.
 
@@ -218,9 +218,9 @@ module.exports = build({
 
 * **`useScriptLoaders`** - Whether to use `babel-loader` and `ts-loader`, defaults to true unless the entry file is not ECMAScript (i.e. a SCSS entry file).
 
-* **`styleIncludes`** - An array of directories relative to `source`, to be compiled as standard stylesheets, defaults to `'styles/'`.
+* **`styleIncludes`** - An array of directory paths to be compiled as standard stylesheets. Paths are relative to `source`. Defaults to `'styles/'`.
 
-* **`cssModuleIncludes`** - An array of directories relative to `source`, to be compiled as CSS Modules, defaults to `'components/'`.
+* **`cssModuleIncludes`** - An array of directory paths to be compiled as CSS Modules. Paths are relative to `source`. Defaults to `'components/'`.
 
 * **`useCssModules`** - Whether to build CSS Modules, defaults to false. When true, files in `cssModuleIncludes` directories will be treated as CSS Modules (but not files in `styleIncludes`).
 
@@ -251,7 +251,7 @@ module.exports = build({
 Tarot exports a couple plugins for your convenience. Tarot also uses several other plugins internally that aren't exported, for tasks like linting and typechecking. Plugins are passed directly to Webpack, so you are not limited to using Tarot's plugins - any valid Webpack plugin should work.
 <br><br>
 
-* **`pluginCopyFiles`** - Copy files or directories from one location to another. Accepts an unlimited number of arguments, where each argument is an object in the shape `{ from: 'vendor', to: 'vendor' }`. The `from` path is relative to `source`, while the `to` path is relative to `output`.
+* **`pluginCopyFiles`** - Copy files or directories from one location to another. Accepts an unlimited number of arguments, where each argument is an object in the shape `{ from: 'vendor', to: 'vendor' }`. If the paths don't start with a slash `/` then the `from` path is relative to `source`, while the `to` path is relative to `output`.
 
 ```js
 pluginCopyFiles(
@@ -310,7 +310,7 @@ type EntryOptions = CommonOptions & {
 // entries. Individual entries can override options.
 type BuildOptions = CommonOptions & {
     entries: { [key: string]: EntryOptions }
-    aliases?: { [key: string]: string }
+    alias?: { [key: string]: string }
     useHttps?: boolean
     allowCors?: boolean
     nodeModuleBabelIncludes?: string[]
