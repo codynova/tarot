@@ -14,7 +14,8 @@
         "strictNullChecks": true,
         "removeComments": true,
         "sourceMap": true,
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "importsNotUsedAsValues": "preserve"
     },
     "include": [
         "../../../src/**/*.ts",
