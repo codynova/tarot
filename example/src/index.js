@@ -1,7 +1,9 @@
-const test = {
-	1: 1,
-	2: 2,
-}
-console.log(...test)
+const symbol = new Symbol(2)
 
-const calculate = () => 1 + 1
+const test = {
+	1: 'one',
+	[symbol]: 'two',
+}
+
+console.log(...test)
+console.log(test?.1 ?? true)

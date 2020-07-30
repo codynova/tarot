@@ -10,6 +10,6 @@
 	},
 	"license": "ISC",
 	"devDependencies": {
-		"tarot": "latest"
+		"tarot": "file:../"
 	}
 }
