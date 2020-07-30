@@ -214,7 +214,7 @@ module.exports = build({
 
 * **`output`** - The output directory where built files will reside.
 
-* **`plugins`** - An array of functions which each return a [Webpack plugin](https://webpack.js.org/concepts/plugins/).
+* **`plugins`** - An array of [Webpack plugins](https://webpack.js.org/concepts/plugins/).
 
 * **`useScriptLoaders`** - Whether to use `babel-loader` and `ts-loader`, defaults to true unless the entry file is not ECMAScript (i.e. a SCSS entry file).
 
@@ -243,6 +243,33 @@ module.exports = build({
 * **`tsConfigPath`** - Provide a path to a custom tsconfig relative to the cwd, defaults to Tarot's internal tsconfig.
 
 * **`babelConfigPath`** - Provide a path to a custom babel config relative to the cwd, defaults to Tarot's internal babel config.
+<br>
+
+
+### Plugins
+
+Tarot exports a couple plugins for your convenience. Tarot also uses several other plugins internally that aren't exported, for tasks like linting and typechecking. Plugins are passed directly to Webpack, so you are not limited to using Tarot's plugins - any valid Webpack plugin should work.
+<br>
+
+* **`pluginCopyFiles`** - Copy files or directories from one location to another. Accepts an unlimited number of arguments, where each argument is an object in the shape `{ from: 'vendor', to: 'vendor' }`. The `from` path is relative to `source`, while the `to` path is relative to `output`.
+
+```js
+pluginCopyFiles(
+  // Copy files from `images/` in `source`, to `assets/images/` in `output`
+  { from: 'images', to: 'assets/images' },
+  // Copy a file from `source` to `output`, and rename it
+  { from: 'test.html', to: `test_${Date.now}.html` },
+)
+```
+
+* **`pluginIgnoreOutput`** - Prevent Webpack from emitting files with names that match a pattern. Accepts a string, RegExp, or an array of strings and/or RegExp to match filenames against.
+
+```js
+pluginIgnoreOutput([
+  'styles.css',
+  /^bundle\.js/
+])
+```
 <br>
 
 
@@ -289,5 +316,9 @@ type BuildOptions = CommonOptions & {
 }
 
 export const build = (options: BuildOptions) => WebpackConfig
+
+export const pluginCopyFiles = (...patterns: { from: string, to: string }[]) => void
+
+export const pluginIgnoreOutput = (...filenames: string[]) => void
 ```
 <br>
