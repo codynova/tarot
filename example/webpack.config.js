@@ -2,15 +2,15 @@ const { build } = require('tarot')
 
 module.exports = build({
     entries: {
-        bundle: {
-            file: 'index.js',
+        app: {
+            file: 'App.tsx',
+            useCssModules: true,
         },
-        'ts-bundle': {
-            file: 'test.ts',
+        'scripts/bundle': {
+            file: 'test.js',
         },
         styles: {
             file: 'styles/styles.scss',
-            useCssModules: true,
         },
     },
     alias: {
