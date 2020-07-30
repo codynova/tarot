@@ -60,12 +60,32 @@ module.exports = build({
   source: 'src',
   output: 'dist',
   entries: {
-    bundle: { file: 'index.js' },
-    'vendor/styles': { file: 'vendor.scss' },
+    bundle: {
+      file: 'index.tsx',
+      scriptOutputFile: `bundle_${Date.now()}`,
+      styleOutputFile: 'styles',
+      usePolyfills: false,
+      useStyleLinting: false,
+      useCssModules: true,
+      tsConfigPath: 'tsconfig.json',
+      babelConfigPath: 'babel.config.js',
+    },
+    'vendor/styles': {
+      file: 'vendor.scss',
+      useScriptLoaders: true,
+      stylelintConfigPath: '.stylelintrc'
+    },
   },
   plugins: [
     pluginCopyFiles({ from: 'assets', to: 'assets' })
-  ]
+  ],
+  useHttps: true,
+  allowCors: true,
+  aliases: {
+    react-dom: '@hot-loader/react-dom',
+    Components: 'src/components',
+  },
+  nodeModuleBabelIncludes: [ 'react-spring' ],
 })
 ```
 <br>
@@ -160,11 +180,11 @@ module.exports = build({
 ```
 <br>
 
-* **`file`** - Required. The path to an entry file, relative to `source`.
+* **`file`** - Required. The path to an entry file relative to `source`.
 
-* **`jsOutputFile`** - Provide a name for the output JavaScript bundle file, defaults to the key for this entry.
+* **`scriptOutputFile`** - Provide a name for the output JavaScript bundle file, defaults to the key for this entry.
 
-* **`cssOutputFile`** - Provide a name for the output CSS bundle file, defaults to the key for this entry.
+* **`styleOutputFile`** - Provide a name for the output CSS bundle file, defaults to the key for this entry.
 <br>
 
 
@@ -198,11 +218,11 @@ module.exports = build({
 
 * **`useScriptLoaders`** - Whether to use `babel-loader` and `ts-loader`, defaults to true unless the entry file is not ECMAScript (i.e. a SCSS entry file).
 
-* **`useCssModules`** - Whether to build CSS Modules, defaults to false.
+* **`styleIncludes`** - An array of directories relative to `source`, to be compiled as standard stylesheets, defaults to `'styles/'`.
 
-* **`cssGlobalIncludes`** - An array of directories, relative to `source`, to be compiled as standard stylesheets, defaults to empty `'styles/'`.
+* **`cssModuleIncludes`** - An array of directories relative to `source`, to be compiled as CSS Modules, defaults to `'components/'`.
 
-* **`cssModuleIncludes`** - An array of directories, relative to `source`, to be compiled as CSS Modules, defaults to `'components/'`.
+* **`useCssModules`** - Whether to build CSS Modules, defaults to false. When true, files in `cssModuleIncludes` directories will be treated as CSS Modules (but not files in `styleIncludes`).
 
 * **`usePolyfills`** - Whether to use `core-js` polyfills, defaults to false.
 
@@ -237,7 +257,7 @@ type CommonOptions = {
     plugins?: Function[]
     useScriptLoaders?: boolean
     useCssModules?: boolean
-    cssGlobalIncludes?: string[]
+    styleIncludes?: string[]
     cssModuleIncludes?: string[]
     usePolyfills?: boolean
     useLinting?: boolean
@@ -253,8 +273,8 @@ type CommonOptions = {
 
 type EntryOptions = CommonOptions & {
     file: string
-    jsOutputFile?: string
-    cssOutputFile?: string
+    scriptOutputFile?: string
+    styleOutputFile?: string
 }
 
 // Values from CommonOptions that are specified
