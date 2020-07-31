@@ -195,6 +195,7 @@ module.exports = build({
     bundle: {
       file: 'index.js',
       // You can put Entry Options here
+      scriptOutputFile: `bundle_${Date.now}`,
     },
   },
 })
@@ -221,10 +222,12 @@ const { build } = require('tarot')
 
 module.exports = build({
   // You can put Common Options here
+  useStyleLinting: false,
   entries: {
     bundle: {
       file: 'index.js',
       // And also here
+      useStyleLinting: true,
     },
   },
 })
