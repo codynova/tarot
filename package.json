@@ -1,6 +1,6 @@
 {
 	"name": "tarot",
-	"version": "0.0.43",
+	"version": "0.0.44",
 	"description": "Bleeding edge web architecture",
 	"main": "lib/index.js",
 	"bin": {

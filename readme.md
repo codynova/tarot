@@ -8,13 +8,27 @@ Webpack configuration for TS, JS, SCSS, and React with ESNext and optional CSS m
 
 ### Objectives
 
-&nbsp;&nbsp;&nbsp;&nbsp;🌈 Excellent dev experience<br>
-&nbsp;&nbsp;&nbsp;&nbsp;🚀 Powerful build tools<br>
-&nbsp;&nbsp;&nbsp;&nbsp;🏛 Standardized architecture<br>
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🌈&nbsp;&nbsp;Excellent dev experience
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🚀&nbsp;&nbsp;Powerful build tools
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🏛&nbsp;&nbsp;Standardized architecture
 <br>
 
 
-#### Features
+### Table of Contents
+
+1. [Features](#features)
+2. [CLI and Package.json](#cli)
+3. [Options](#options)
+   - [Build Options](#build-options)
+   - [Entry Options](#entry-options)
+   - [Common Options](#common-options)
+4. [Plugins](#plugins)
+5. [Usage with TypeScript](#usage-with-typescript)
+6. [API](#api)
+<br>
+
+
+### Features
 
 Optional and configurable support for:
 
@@ -26,6 +40,7 @@ Optional and configurable support for:
 * Prettification
 * Dev server
 * Production builds
+* Webpack plugins
 * Git hooks via husky
 * Style entry files
 <br>
@@ -131,7 +146,7 @@ This is a basic `package.json` for a project using Tarot. The `dev`, `build`, an
 
 ### Options
 
-Tarot has sensible defaults to encourage standardized architecture. However it is possible to tweak every aspect of the build process. All options are listed under the API section of the readme.
+Tarot has sensible defaults to encourage standardized architecture. However it is possible to tweak every aspect of the build process. All options are also listed under the API section of the readme.
 <br><br>
 
 
@@ -238,21 +253,21 @@ module.exports = build({
 
 * **`useScriptLinting`** - Whether to lint scripts, defaults to true.
 
-* **`eslintConfigPath`** - Provide a path to a custom eslint config relative to the cwd, defaults to Tarot's internal eslint config.
+* **`eslintConfigPath`** - Provide a path to a custom eslint config relative to the cwd, defaults to [Tarot's eslint config](https://github.com/codynova/tarot-eslint-config).
 
-* **`eslintIgnorePath`** - Provide a path to a custom eslint ignore config relative to the cwd, defaults to Tarot's internal eslint ignore config.
+* **`eslintIgnorePath`** - Provide a path to a custom eslint ignore config relative to the cwd, defaults to no eslint ignore file.
 
 * **`eslintExcludes`** - An array of directories to be passed to [eslint's `ignorePatterns` option](https://eslint.org/docs/user-guide/configuring#ignorepatterns-in-config-files) (paths are resolved according to eslint's `ignorePatterns` rules).
 
-* **`stylelintConfigPath`** - Provide a path to a custom stylelint config relative to the cwd, defaults to Tarot's internal stylelint config.
+* **`stylelintConfigPath`** - Provide a path to a custom stylelint config relative to the cwd, defaults to [Tarot's stylelint config](https://github.com/codynova/tarot-stylelint-config).
 
-* **`babelConfigPath`** - Provide a path to a custom babel config relative to the cwd, defaults to Tarot's internal babel config.
+* **`babelConfigPath`** - Provide a path to a custom babel config relative to the cwd, defaults to [Tarot's babel config](https://github.com/codynova/tarot-babel-config).
 
-* **`babelOptions`** - An object of [Babel options](https://babeljs.io/docs/en/options). This can override values in Babel config files.
+* **`babelOptions`** - An object of [Babel options](https://babeljs.io/docs/en/options). This can override values in Babel config files. When this option is passed at both the top-level `build` function and in an individual entry, the entry's options will be merged with the top-level options.
 
-* **`tsConfigPath`** - Provide a path to a custom tsconfig relative to the cwd, defaults to Tarot's internal tsconfig.
+* **`tsConfigPath`** - Provide a path to a custom tsconfig relative to the cwd, defaults to [Tarot's tsconfig](https://github.com/codynova/tarot-typescript-config).
 
-* **`tsCompilerOptions`** - An object of [TypeScript compiler options](https://www.typescriptlang.org/docs/handbook/compiler-options.html). This can override values in TypeScript config files.
+* **`tsCompilerOptions`** - An object of [TypeScript compiler options](https://www.typescriptlang.org/docs/handbook/compiler-options.html). This can override values in TypeScript config files. When this option is passed at both the top-level `build` function and in an individual entry, the entry's options will be merged with the top-level options.
 
 <br>
 
@@ -281,6 +296,17 @@ pluginIgnoreOutput([
   'styles.css',
   /^bundle\.js/,
 ])
+```
+<br>
+
+
+### Usage with TypeScript
+
+Tarot works with TypeScript out of the box, but we recommend adding a `tsconfig.json` to the root of your project that extends Tarot's config. This helps code editors like VS Code:
+
+```jsonc
+// tsconfig.json
+{ "extends": "tarot-typescript-config" }
 ```
 <br>
 
