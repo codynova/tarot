@@ -248,7 +248,7 @@ module.exports = build({
 
 * **`useCssModules`** - Whether to build CSS Modules, defaults to false. When true, files in `cssModuleIncludes` directories will be treated as CSS Modules (but not files in `styleIncludes`).
 
-* **`usePolyfills`** - Whether to use `core-js` polyfills, defaults to false.
+* **`usePolyfills`** - Whether to use [core-js polyfills](https://github.com/zloirock/core-js), defaults to false.
 
 * **`useLinting`** - Whether to use any kind of linting, defaults to true.
 
