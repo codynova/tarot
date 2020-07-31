@@ -5,6 +5,9 @@ module.exports = build({
         app: {
             file: 'App.tsx',
             useCssModules: true,
+            tsCompilerOptions: {
+                lib: [ 'esnext', 'dom' ],
+            },
         },
         'scripts/bundle': {
             file: 'test.js',
