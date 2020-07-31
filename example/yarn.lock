@@ -7486,7 +7486,7 @@ tarot-typescript-config@latest:
   integrity sha512-cmyFb+ZMAmzHjsp+ozOd5VX4nhYZrjqtl57/+qA4buNz3iitTfUclV5WUvOdyDy9zXZ9eYJE2F7UWALugM8UJg==
 
 "tarot@file:..":
-  version "0.0.42"
+  version "0.0.44"
   dependencies:
     "@babel/core" "7.11.0"
     "@babel/plugin-proposal-class-properties" "7.10.4"
