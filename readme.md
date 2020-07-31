@@ -67,10 +67,16 @@ module.exports = build({
       usePolyfills: false,
       useStyleLinting: false,
       useCssModules: true,
-      tsConfigPath: 'tsconfig.json',
       babelConfigPath: 'babel.config.js',
+      babelOptions: {
+        sourceMaps: 'inline',
+      },
+      tsConfigPath: 'tsconfig.json',
+      tsCompilerOptions: {
+        lib: [ 'esnext', 'dom' ],
+      },
     },
-    'vendor/styles': {
+    'vendor/vendor-styles': {
       file: 'vendor.scss',
       useScriptLoaders: true,
       stylelintConfigPath: '.stylelintrc'
@@ -82,8 +88,8 @@ module.exports = build({
   useHttps: true,
   allowCors: true,
   alias: {
-    react-dom: '@hot-loader/react-dom',
-    Components: 'src/components',
+    'react-dom': '@hot-loader/react-dom',
+    Components: 'components',
   },
   nodeModuleBabelIncludes: [ 'react-spring' ],
 })
@@ -240,9 +246,14 @@ module.exports = build({
 
 * **`stylelintConfigPath`** - Provide a path to a custom stylelint config relative to the cwd, defaults to Tarot's internal stylelint config.
 
+* **`babelConfigPath`** - Provide a path to a custom babel config relative to the cwd, defaults to Tarot's internal babel config.
+
+* **`babelOptions`** - An object of [Babel options](https://babeljs.io/docs/en/options). This can override values in Babel config files.
+
 * **`tsConfigPath`** - Provide a path to a custom tsconfig relative to the cwd, defaults to Tarot's internal tsconfig.
 
-* **`babelConfigPath`** - Provide a path to a custom babel config relative to the cwd, defaults to Tarot's internal babel config.
+* **`tsCompilerOptions`** - An object of [TypeScript compiler options](https://www.typescriptlang.org/docs/handbook/compiler-options.html). This can override values in TypeScript config files.
+
 <br>
 
 
@@ -295,8 +306,10 @@ type CommonOptions = {
     eslintIgnorePath?: string
     eslintExcludes?: string[]
     stylelintConfigPath?: string
-    tsConfigPath?: string
     babelConfigPath?: string
+    babelOptions?: { [key: string]: any }
+    tsConfigPath?: string
+    tsCompilerOptions?: { [key: string]: any }
 }
 
 type EntryOptions = CommonOptions & {
