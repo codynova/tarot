@@ -1,6 +1,6 @@
 {
 	"name": "tarot",
-	"version": "0.0.49",
+	"version": "0.0.50",
 	"description": "Bleeding edge web architecture",
 	"main": "lib/index.js",
 	"bin": {
@@ -65,5 +65,8 @@
 		"webpack": "4.44.1",
 		"webpack-cli": "3.3.12",
 		"webpack-dev-server": "3.11.0"
+	},
+	"resolutions": {
+		"**/**/node-forge": ">=0.10.0"
 	}
 }
