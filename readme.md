@@ -272,6 +272,8 @@ module.exports = build({
 
 * **`tsCompilerOptions`** - An object of [TypeScript compiler options](https://www.typescriptlang.org/docs/handbook/compiler-options.html). This can override values in TypeScript config files. When this option is passed at both the top-level `build` function and in an individual entry, the entry's options will be merged with the top-level options.
 
+* **`rules`** - A function that receives the Webpack config `module.rules` array and returns a modified version. This allows for arbitrarily modifying the configuration.
+
 <br>
 
 
