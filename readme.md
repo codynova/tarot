@@ -260,6 +260,8 @@ module.exports = build({
 
 * **`eslintIgnorePath`** - Provide a path to a custom eslint ignore config relative to the cwd, defaults to no eslint ignore file.
 
+* **`eslintFiles`** - An array of directories to be passed to [eslint-webpack-plugins's `files` option](https://github.com/webpack-contrib/eslint-webpack-plugin#files).
+
 * **`eslintExcludes`** - An array of directories to be passed to [eslint's `ignorePatterns` option](https://eslint.org/docs/user-guide/configuring#ignorepatterns-in-config-files) (paths are resolved according to eslint's `ignorePatterns` rules).
 
 * **`stylelintConfigPath`** - Provide a path to a custom stylelint config relative to the cwd, defaults to [Tarot's stylelint config](https://github.com/codynova/tarot-stylelint-config).
@@ -335,6 +337,7 @@ type CommonOptions = {
     useScriptLinting?: boolean
     eslintConfigPath?: string
     eslintIgnorePath?: string
+    eslintFiles?: string[]
     eslintExcludes?: string[]
     stylelintConfigPath?: string
     babelConfigPath?: string
