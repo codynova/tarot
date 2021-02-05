@@ -260,7 +260,7 @@ module.exports = build({
 
 * **`eslintIgnorePath`** - Provide a path to a custom eslint ignore config relative to the cwd, defaults to no eslint ignore file.
 
-* **`eslintFiles`** - An array of directories to be passed to [eslint-webpack-plugins's `files` option](https://github.com/webpack-contrib/eslint-webpack-plugin#files).
+* **`eslintFiles`** - An array of directories to be passed to [eslint-webpack-plugins's `files` option](https://github.com/webpack-contrib/eslint-webpack-plugin#files) (paths are resolved relative to `source`).
 
 * **`eslintExcludes`** - An array of directories to be passed to [eslint's `ignorePatterns` option](https://eslint.org/docs/user-guide/configuring#ignorepatterns-in-config-files) (paths are resolved according to eslint's `ignorePatterns` rules).
 
