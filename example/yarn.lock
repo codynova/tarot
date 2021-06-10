@@ -7726,7 +7726,7 @@ tarot-typescript-config@latest:
   integrity sha512-cmyFb+ZMAmzHjsp+ozOd5VX4nhYZrjqtl57/+qA4buNz3iitTfUclV5WUvOdyDy9zXZ9eYJE2F7UWALugM8UJg==
 
 "tarot@file:..":
-  version "0.0.50"
+  version "0.1.1"
   dependencies:
     "@babel/core" "7.11.6"
     "@babel/plugin-proposal-class-properties" "7.10.4"
@@ -7878,9 +7878,9 @@ toidentifier@1.0.0:
   integrity sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw==
 
 trim-newlines@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/trim-newlines/-/trim-newlines-3.0.0.tgz#79726304a6a898aa8373427298d54c2ee8b1cb30"
-  integrity sha512-C4+gOpvmxaSMKuEf9Qc134F1ZuOHVXKRbtEflf4NTtuuJDEIJ9p5PXsalL8SkeRw+qit1Mo+yuvMPAKwWg/1hA==
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/trim-newlines/-/trim-newlines-3.0.1.tgz#260a5d962d8b752425b32f3a7db0dcacd176c144"
+  integrity sha512-c1PTsA3tYrIsLGkJkzHF+w9F2EyxfXGo4UyJc4pFL++FMjnq0HJS69T3M7d//gKrFKwy429bouPescbjecU+Zw==
 
 trim-trailing-lines@^1.0.0:
   version "1.1.3"
